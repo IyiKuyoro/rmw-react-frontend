@@ -4,12 +4,12 @@ const common = require('./webpack.common.js');
 module.exports = merge(common, {
   mode: 'production',
   module: {
-    rule: [
+    rules: [
       {
         test: /\.css$/,
         use: [
           {
-            loader: 'style-loader'
+            loader: 'style-loader',
           },
           {
             loader: 'css-loader',
