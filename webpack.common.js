@@ -13,6 +13,7 @@ module.exports = {
   entry: {
     app: './src/index.jsx',
   },
+  resolve: { extensions: ['.js', '.jsx'] },
   module: {
     rules: [
       {
