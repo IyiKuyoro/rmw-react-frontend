@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/IyiKuyoro/rmw-react-frontend/issues"
   },
-  "homepage": "https://github.com/IyiKuyoro/rmw-react-frontend#readme"
+  "homepage": "https://github.com/IyiKuyoro/rmw-react-frontend#readme",
+  "devDependencies": {
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  }
 }
