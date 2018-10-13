@@ -5,7 +5,7 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
   },
   module: {
     rules: [
@@ -13,20 +13,20 @@ module.exports = merge(common, {
         test: /\.css$/,
         use: [
           {
-            loader: "style-loader"
+            loader: 'style-loader',
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               modules: true,
               importLoaders: 1,
-              localIdentName: "[name]_[local]_[hash:base64]",
+              localIdentName: '[name]_[local]_[hash:base64]',
               sourceMap: true,
               minimize: false,
-            }
+            },
           },
         ],
-      }
-    ]
-  }
+      },
+    ],
+  },
 });

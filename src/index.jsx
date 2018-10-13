@@ -1,8 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 const Index = () => {
-  return <div>Hello React!</div>;
+  return <div>Hello React from RMW!</div>;
 };
 
-ReactDOM.render(<Index />, document.getElementById("root"));
+ReactDOM.render(<Index />, document.getElementById('root'));

@@ -5,13 +5,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const cleanDist = new CleanWebpackPlugin(['dist']);
 
 const htmlPlugin = new HtmlWebpackPlugin({
-  template: "./src/static/index.html",
-  filename: "./index.html",
-})
+  template: './src/static/index.html',
+  filename: './index.html',
+});
 
 module.exports = {
   entry: {
-    app: './src/index.jsx'
+    app: './src/index.jsx',
   },
   module: {
     rules: [
@@ -19,10 +19,10 @@ module.exports = {
         test: /\.js$|\.jsx$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: 'babel-loader',
+        },
       },
-    ]
+    ],
   },
   plugins: [
     cleanDist,
@@ -30,6 +30,6 @@ module.exports = {
   ],
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
-  }
+    path: path.resolve(__dirname, 'dist'),
+  },
 };
