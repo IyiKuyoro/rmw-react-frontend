@@ -1,0 +1,19 @@
+{
+  "name": "rmw-react-frontend",
+  "version": "1.0.0",
+  "description": "The front-end app of a car-pooling service",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IyiKuyoro/rmw-react-frontend.git"
+  },
+  "author": "Opeoluwa Iyi-Kuyoro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IyiKuyoro/rmw-react-frontend/issues"
+  },
+  "homepage": "https://github.com/IyiKuyoro/rmw-react-frontend#readme"
+}
