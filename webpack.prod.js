@@ -9,20 +9,20 @@ module.exports = merge(common, {
         test: /\.css$/,
         use: [
           {
-            loader: "style-loader"
+            loader: 'style-loader'
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               modules: true,
               importLoaders: 1,
-              localIdentName: "[name]_[local]_[hash:base64]",
+              localIdentName: '[name]_[local]_[hash:base64]',
               sourceMap: false,
               minimize: true,
-            }
+            },
           },
         ],
-      }
-    ]
-  }
+      },
+    ],
+  },
 });
