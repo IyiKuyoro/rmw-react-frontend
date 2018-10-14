@@ -4,7 +4,7 @@
 
 This is a front-end application for a carpooling service that enables people to find other individuals traveling in the same direction. It is a rebuild of the [original application](https://github.com/IyiKuyoro/Ride-My-Way-Frontend) with the React library.
 
-The original project was built as a bootcamp project for the author's application to [Andela Nigeria](www.andela.com). This version is a project towards the completion of the author's first training phase at [Andela Nigeria](www.andela.com).
+The original project was built as a bootcamp project for the author's application to [Andela Nigeria](https://andela.com/). This version is a project towards the completion of the author's first training phase at [Andela Nigeria](https://andela.com/).
 
 ## Getting Started
 You can visit the staged application [here](https://rmw-frontend.herokuapp.com/).
@@ -30,4 +30,4 @@ If you wish to report a bug, kindly raise an issue and I will take a look at it.
 
 ## Acknowledgments
 The following organisations and individuals are instrumental to the progress of this project:
-- [Andela](www.andela.com)
+- [Andela](https://andela.com/)
