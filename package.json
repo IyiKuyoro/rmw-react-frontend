@@ -4,9 +4,12 @@
   "description": "The front-end app of a car-pooling service",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage",
-    "start": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "cypress:open": "concurrently --kill-others \"npm run cidev\" \"cypress open\"",
+    "cidev": "webpack-dev-server --config webpack.dev.js",
+    "dev": "webpack-dev-server --open --config webpack.dev.js",
+    "start": "",
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -25,12 +28,15 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
+    "concurrently": "^4.0.1",
     "css-loader": "^1.0.0",
+    "cypress": "^3.1.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
     "enzyme-to-json": "^3.3.4",
     "eslint": "^5.7.0",
     "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-cypress": "^2.0.1",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^21.24.1",
     "eslint-plugin-jsx-a11y": "^6.1.2",
