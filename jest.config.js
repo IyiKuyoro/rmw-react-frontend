@@ -13,5 +13,5 @@ module.exports = {
     '^Components(.*)$': '<rootDir>/src/components$1',
   },
   setupTestFrameworkScriptFile: '<rootDir>__tests__/setup/setupEnzyme.js',
-  testPathIgnorePatterns: ['<rootDir>/__tests__/setup/'],
+  testPathIgnorePatterns: ['<rootDir>/__tests__/setup/', '<rootDir>/cypress/'],
 };
