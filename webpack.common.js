@@ -1,17 +1,25 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const cleanDist = new CleanWebpackPlugin(['dist']);
-
 const htmlPlugin = new HtmlWebpackPlugin({
   template: './src/static/index.html',
   filename: './index.html',
+  inject: 'body',
 });
+const copyFiles = new CopyWebpackPlugin([
+  { from: './src/static/favicon.ico' },
+]);
 
 module.exports = {
-  entry: {
-    app: './src/index.jsx',
+  entry: './src/index.jsx',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    chunkFilename: '[id].js',
+    publicPath: '/',
   },
   resolve: { extensions: ['.js', '.jsx', 'css'] },
   module: {
@@ -28,9 +36,6 @@ module.exports = {
   plugins: [
     cleanDist,
     htmlPlugin,
+    copyFiles,
   ],
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
 };
