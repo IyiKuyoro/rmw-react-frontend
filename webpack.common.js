@@ -30,10 +30,21 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
+      {
+        test: /\.(jpe?g|png)$/i,
+        use: [{
+          loader: 'url-loader',
+        }],
+      },
     ],
   },
   resolve: {
-    extensions: ['.jsx', '.js', '.css']
+    extensions: ['.jsx', '.js', '.css'],
+    alias: {
+      Images: path.resolve(__dirname, 'src/static/images/'),
+      Pages: path.resolve(__dirname, 'src/pages/'),
+      Compounds: path.resolve(__dirname, 'src/components/compounds/'),
+    },
   },
   plugins: [
     cleanDist,
