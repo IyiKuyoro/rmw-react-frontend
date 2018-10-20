@@ -3,6 +3,3 @@ node_modules
 coverage
 dist
 .vscode
-
-#locks
-package-lock.json
