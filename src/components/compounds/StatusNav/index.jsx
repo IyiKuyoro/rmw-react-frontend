@@ -2,21 +2,24 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+// Statics
+import style from './style.css';
+
 const StatusNav = (props) => {
   const { isAuth } = props;
 
+  if (!isAuth) {
+    return (
+      <div className={style.nav}>
+        <h1 className={style.nav__text}>Ride My Way</h1>
+        <p className={`${style.nav__text} ${style.nav__small}`}>Simply tag along</p>
+      </div>
+    );
+  }
+
   return (
     <div>
-      {!isAuth ? (
-        <div>
-          <h1>Ride My Way</h1>
-          <p>Simply tag along</p>
-        </div>
-      ) : (
-        <div>
-          User
-        </div>
-      )}
+      User
     </div>
   );
 };

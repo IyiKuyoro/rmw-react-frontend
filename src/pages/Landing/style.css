@@ -1,0 +1,50 @@
+.landing {
+  background-image: url('../../static/images/landing.jpg');
+}
+
+.hero {
+  text-align: center;
+  width: fit-content;
+  margin: 15% auto 12% auto;
+  padding: 0 30px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn {
+  margin-top: 0; 
+  margin-left: calc(50% - (150px/2));
+  margin-right: calc(50% - (150px/2));
+  margin-bottom: 50px;
+  height: 48px;
+  border-radius: 75px;
+  text-align: center;
+  width: 150px;
+  font-size: 20px;
+  box-shadow: 3px 4px 7px 0px rgb(73, 73, 73);
+}
+
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 0px 1px 7px 0px rgb(31, 31, 31);
+  color: white;
+  background: black;
+}
+
+.btn:focus {
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0px 1px 7px 0px rgb(31, 31, 31);
+  color: white;
+  background: black;
+}
+
+.icon:hover {
+  cursor: pointer;
+  color: rgb(153, 153, 153);
+}
+
+@media screen and (min-height: 470px) {
+  .landing {
+    height: 100vh;
+  }
+}

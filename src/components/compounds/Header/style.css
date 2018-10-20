@@ -1,4 +1,15 @@
-.logo {
-  width: 70px;
-  height: 70px;
+.header {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@media screen and (max-width: 370px) {
+  .header {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }

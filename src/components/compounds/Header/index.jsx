@@ -1,18 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 // Components
-import StatusNav from 'Compounds/StatusNav';
+import StatusNav from '../StatusNav';
+import HomeLink from '../../atoms/HomeLink';
 
 // statics
-import logo from 'Images/logo.png';
 import style from './style.css';
 
 const Header = () => (
-  <header>
-    <Link to="/">
-      <img className={style.logo} src={logo} alt="Ride My Way logo, home" />
-    </Link>
+  <header className={style.header}>
+    <HomeLink />
     <StatusNav />
   </header>
 );
