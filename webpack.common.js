@@ -21,7 +21,6 @@ module.exports = {
     chunkFilename: '[id].js',
     publicPath: '/',
   },
-  resolve: { extensions: ['.js', '.jsx', 'css'] },
   module: {
     rules: [
       {
@@ -32,6 +31,9 @@ module.exports = {
         },
       },
     ],
+  },
+  resolve: {
+    extensions: ['.jsx', '.js', '.css']
   },
   plugins: [
     cleanDist,
