@@ -1,0 +1,20 @@
+.nav {
+  padding: 12px 0;
+  text-align: right;
+}
+
+.nav__text {
+  margin: 0;
+  font-size: 170%;
+}
+
+.nav__small {
+  font-size: 100%;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 370px) {
+  .nav__small {
+    display: none;
+  }
+}

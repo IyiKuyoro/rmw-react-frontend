@@ -21,7 +21,6 @@ module.exports = {
     chunkFilename: '[id].js',
     publicPath: '/',
   },
-  resolve: { extensions: ['.js', '.jsx', 'css'] },
   module: {
     rules: [
       {
@@ -31,7 +30,16 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
+      {
+        test: /\.(jpe?g|png)$/i,
+        use: [{
+          loader: 'url-loader',
+        }],
+      },
     ],
+  },
+  resolve: {
+    extensions: ['.jsx', '.js', '.css'],
   },
   plugins: [
     cleanDist,
