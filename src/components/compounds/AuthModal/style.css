@@ -1,0 +1,66 @@
+.modal__overlay {
+  width: 100%;
+  height: 100%;
+  background: rgb(129, 129, 129, 0.7);
+  display: flex;
+  align-items: center;
+}
+
+.modal__overlay_open {
+  position: absolute;
+}
+
+.modal__overlay_close {
+  display: none;
+}
+
+.modal {
+  width: 90%;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 10px;
+  padding-bottom: 35px;
+  margin: auto;
+}
+
+.close_icon {
+  position: relative;
+  margin: 13px;
+  left: 90%;
+}
+
+.close_icon:focus {
+  color: red;
+  outline: none;
+}
+
+.tab__container {
+  width: fit-content;
+  margin: auto;
+}
+
+.auth_type {
+  font-size: 20px;
+  color: gray;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  background: none;
+}
+
+.auth_type:focus {
+  outline: none;
+  font-weight: bold;
+  color: black;
+}
+
+.selected {
+  border-bottom: 2px solid rgb(0, 0, 42);
+}
+
+
+
+@media screen and (min-height: 470px) {
+  .modal {
+    width: 100%;
+  }
+}
