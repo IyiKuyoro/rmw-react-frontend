@@ -25,21 +25,3 @@ describe('StatusNav signed-out', () => {
     expect(wrapper.find('p').text()).toEqual('Simply tag along');
   });
 });
-
-describe('StatusNav signed-in', () => {
-  beforeEach(() => {
-    const initialStore = {
-      user: {
-        isAuthenticated: true,
-      },
-    };
-
-    store = createStore(() => initialStore);
-  });
-
-  it('should render RideMyWay', () => {
-    const wrapper = mount(<Provider store={store}><StatusNav /></Provider>);
-
-    expect(wrapper.find('div').text()).toEqual('User');
-  });
-});
