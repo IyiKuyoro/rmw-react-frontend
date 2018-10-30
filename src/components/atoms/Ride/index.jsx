@@ -33,7 +33,7 @@ Ride.propTypes = {
   from: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
-  seats: PropTypes.string.isRequired,
+  seats: PropTypes.number.isRequired,
 };
 
 export default Ride;

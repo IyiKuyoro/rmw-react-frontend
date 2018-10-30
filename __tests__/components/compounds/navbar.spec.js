@@ -4,7 +4,7 @@ import { NavBar } from '../../../src/components/compounds/NavBar';
 
 describe('NavBar', () => {
   it('should render the page', () => {
-    const wrapper = shallow(<NavBar currentPage="rides" change={() => {}} />);
+    const wrapper = shallow(<NavBar history={{ push: () => {} }} currentPage="rides" change={() => {}} />);
 
     wrapper.childAt(0).simulate('click');
     wrapper.childAt(1).simulate('click');
