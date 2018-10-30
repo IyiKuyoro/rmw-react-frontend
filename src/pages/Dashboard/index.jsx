@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import Header from '../../components/compounds/Header';
-import NavBar from '../../components/compounds/NavBar';
+import NavBarComponent from '../../components/compounds/NavBar';
 import Ride from '../../components/atoms/Ride';
-import OfferRide from '../../components/compounds/OfferRide';
+import OfferRideComponent from '../../components/compounds/OfferRide';
+import Requests from '../../components/compounds/Request';
+import { saveUser } from '../../store/actions/auth';
 import style from './style.css';
 
 class Dashboard extends Component {
@@ -19,7 +21,17 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
-    const { user, history } = this.props;
+    const { user, history, setUser } = this.props;
+
+
+    if (localStorage.user) {
+      const exisitingUser = JSON.parse(localStorage.getItem('user'));
+
+      if (user) {
+        setUser(exisitingUser);
+      }
+    }
+
     if (user) {
       console.log(user);
       return axios.get('https://iyikuyoro-ride-my-way.herokuapp.com/api/v1/rides',
@@ -53,12 +65,13 @@ class Dashboard extends Component {
           <Header className={style.header} />
         </div>
         <div className={style.navbar__wrapper}>
-          <NavBar />
+          <NavBarComponent />
         </div>
         {
           <div className={`${style.wrap_container} ${style.full_width}`}>
             {currentPage === 'rides' ? (
               <div className={`${style.wrap_container} ${style.full_width}`}>
+                <h2 className={style.page_title}>All Rides</h2>
                 {rides.map(ride => (
                   <Ride
                     key={ride.id}
@@ -70,7 +83,8 @@ class Dashboard extends Component {
                 ))}
               </div>
             ) : ''}
-            {currentPage === 'offer' ? (<OfferRide />) : ''}
+            {currentPage === 'offer' ? <OfferRideComponent /> : ''}
+            {currentPage === 'request' ? <Requests rides={rides} /> : ''}
           </div>
         }
       </div>
@@ -94,6 +108,7 @@ Dashboard.propTypes = {
     push: PropTypes.func.isRequired,
   }).isRequired,
   currentPage: PropTypes.string,
+  setUser: PropTypes.func.isRequired,
 };
 
 Dashboard.defaultProps = {
@@ -106,4 +121,8 @@ const mapStateToProps = state => ({
   user: state.auth.user,
 });
 
-export default connect(mapStateToProps)(Dashboard);
+const mapDispatchToProps = dispatch => ({
+  setUser: user => dispatch(saveUser(user)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
