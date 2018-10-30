@@ -11,7 +11,7 @@ import SignUpForm from '../../compounds/SignUpForm';
 // Style
 import style from './style.css';
 
-class AuthModal extends Component {
+export class AuthModal extends Component {
   constructor(props) {
     super(props);
 
