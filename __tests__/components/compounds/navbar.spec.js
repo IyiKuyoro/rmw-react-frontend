@@ -9,7 +9,6 @@ describe('NavBar', () => {
     wrapper.childAt(0).simulate('click');
     wrapper.childAt(1).simulate('click');
     wrapper.childAt(2).simulate('click');
-    wrapper.childAt(3).simulate('click');
 
     expect(wrapper.children().length).toEqual(4);
     expect(wrapper.exists()).toEqual(true);

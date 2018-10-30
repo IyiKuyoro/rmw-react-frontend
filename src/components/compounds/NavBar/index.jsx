@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import Button from '../../atoms/Button';
 import { changePage } from '../../../store/actions/dashboard';
 import style from './style.css';
 
 export const NavBar = (props) => {
-  const { currentPage, change } = props;
-
+  const { currentPage, change, history } = props;
   return (
     <nav className={style.navbar}>
       <Button
@@ -30,7 +30,10 @@ export const NavBar = (props) => {
       </Button>
       <Button
         className={`${style.nav_button} ${currentPage === 'sign out' ? style.selected : ''}`}
-        onClick={() => change('sign out')}
+        onClick={() => {
+          localStorage.clear();
+          history.push('/');
+        }}
       >
         Sign Out
       </Button>
@@ -41,6 +44,9 @@ export const NavBar = (props) => {
 NavBar.propTypes = {
   currentPage: PropTypes.string.isRequired,
   change: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -51,4 +57,4 @@ const mapDispatchToProps = dispatch => ({
   change: newpage => dispatch(changePage(newpage)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(NavBar));
