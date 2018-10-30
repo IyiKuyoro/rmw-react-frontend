@@ -16,7 +16,7 @@ export class AuthModal extends Component {
     super(props);
 
     this.state = {
-      signup: true,
+      signup: false,
     };
   }
 
