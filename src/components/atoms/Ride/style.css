@@ -1,0 +1,43 @@
+.card {
+  width: 200px;
+  height: 150px;
+  margin: 10px 5px 0 5px;
+  border-radius: 5px;
+  box-shadow: 0 1px 10px 1px #4e6eff;
+  justify-content: center;
+  text-align: center;
+}
+
+.wrap_container {
+  padding: 1%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.direction {
+  width: 100%;
+  height: fit-content;
+  justify-content: center;
+}
+
+.direction_icon {
+  margin: auto 10px;
+}
+
+.info {
+  width: fit-content;
+}
+
+.details {
+  width: 100%;
+  justify-content: space-evenly;
+  height: fit-content;
+}
+
+.view {
+  height: 35px;
+  width: 80%;
+  order: 0;
+  background: #4e6eff;
+  min-height: 30px;
+}

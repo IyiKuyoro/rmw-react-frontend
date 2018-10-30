@@ -2,7 +2,7 @@ import { SET_USER, TOGGLE_MODAL } from '../constants';
 
 const initialState = {
   modalOpen: false,
-  user: {},
+  user: undefined,
 };
 
 const auth = (state = initialState, action) => {

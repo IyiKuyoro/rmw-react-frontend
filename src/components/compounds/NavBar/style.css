@@ -1,0 +1,50 @@
+.nav_button {
+  width: calc((100% - 8px)/4);
+  text-decoration: none;
+  padding: 2% 0;
+  text-align: center;
+  color: rgb(92, 92, 92);
+  font-size: 15px;
+  background: white;
+  border: none;
+  border-Bottom: 1px solid #041666;
+}
+
+.nav_button:focus {
+  outline: none;
+  background: #b7c4fc;
+}
+
+.selected {
+  border-top: 1px solid #041666;
+  border-left: 1px solid #041666;
+  border-right: 1px solid #041666;
+  border-bottom: none;
+}
+
+.navbar {
+  max-width: 1000px;
+  margin: 1% auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+@media screen and (max-width: 380px) {
+  .navbar {
+    justify-content: center;
+  }
+
+  .nav_button {
+    width: 49%;
+    background: white;
+    border: 1px solid #041666;
+  }
+}
+
+
+
+
+
+
+
