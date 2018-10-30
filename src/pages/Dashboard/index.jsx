@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Header from '../../components/compounds/Header';
 import NavBar from '../../components/compounds/NavBar';
 import Ride from '../../components/atoms/Ride';
+import OfferRide from '../../components/compounds/OfferRide';
 import style from './style.css';
 
 class Dashboard extends Component {
@@ -54,18 +55,24 @@ class Dashboard extends Component {
         <div className={style.navbar__wrapper}>
           <NavBar />
         </div>
-        {currentPage === 'rides' ? (
+        {
           <div className={`${style.wrap_container} ${style.full_width}`}>
-            {rides.map(ride => (
-              <Ride
-                from={ride.origin}
-                to={ride.destination}
-                time={ride.time}
-                seats={ride.avaliableSpace}
-              />
-            ))}
+            {currentPage === 'rides' ? (
+              <div className={`${style.wrap_container} ${style.full_width}`}>
+                {rides.map(ride => (
+                  <Ride
+                    key={ride.id}
+                    from={ride.origin}
+                    to={ride.destination}
+                    time={ride.time}
+                    seats={ride.avaliableSpace}
+                  />
+                ))}
+              </div>
+            ) : ''}
+            {currentPage === 'offer' ? (<OfferRide />) : ''}
           </div>
-        ) : ''}
+        }
       </div>
     );
   }
