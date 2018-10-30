@@ -7,6 +7,7 @@ import { toggleModal } from '../../../store/actions/auth';
 import Button from '../../atoms/Button';
 // Compounds
 import SignInForm from '../../compounds/SignInForm';
+import SignUpForm from '../../compounds/SignUpForm';
 // Style
 import style from './style.css';
 
@@ -56,7 +57,7 @@ class AuthModal extends Component {
               SIGN-UP
             </Button>
           </div>
-          {!signup ? <SignInForm /> : ''}
+          {!signup ? <SignInForm /> : <SignUpForm />}
         </div>
       </div>
     );
