@@ -4,6 +4,7 @@
   justify-content: space-between;
   padding: 10px;
   font-family: 'Montserrat', sans-serif;
+  color: black;
 }
 
 @media screen and (max-width: 370px) {
