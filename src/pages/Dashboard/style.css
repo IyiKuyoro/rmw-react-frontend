@@ -22,3 +22,8 @@
   max-width: 1000px;
   margin: 0 auto;
 }
+
+.page_title{
+  width: 100%;
+  text-align: center;
+}

@@ -1,0 +1,59 @@
+.wrap_container {
+  justify-content: center;
+  padding: 1%;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.direction_icon {
+  margin: auto 10px;
+}
+
+.ride_card {
+  width: 200px;
+  height: 150px;
+  margin: 10px 5px 0 5px;
+  border-radius: 5px;
+  box-shadow: 0 1px 10px 1px #4e6eff;
+  justify-content: center;
+  text-align: center;
+}
+
+.direction {
+  width: 100%;
+  height: fit-content;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.wrap-container {
+  padding: 1%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.details {
+  width: 100%;
+  justify-content: space-around;
+  height: fit-content;
+}
+
+.space {
+  margin: 20px 0 0 0;
+}
+
+.view {
+  height: 35px;
+  width: 80%;
+  order: 0;
+  background: #4e6eff;
+  min-height: 30px;
+  margin-top: 10px;
+}
+
+.page_title{
+  width: 100%;
+  text-align: center;
+}
