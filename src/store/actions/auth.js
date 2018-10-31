@@ -27,9 +27,8 @@ export const login = (info, history) => (dispatch) => {
       dispatch(toggleModal(true));
       history.push('/dashboard');
     })
-    .catch((response) => {
-      console.log(response);
-      toastr.error(response.message || 'Opps, could not log you in at this time');
+    .catch((error) => {
+      toastr.error(error.response.data.message || 'Opps, could not log you in at this time');
     });
 };
 
@@ -57,7 +56,7 @@ export const signup = (info, history) => (dispatch) => {
       dispatch(toggleModal(true));
       history.push('/dashboard');
     })
-    .catch((response) => {
-      toastr.error(response.message || 'Opps, could not sign you up at this time');
+    .catch((error) => {
+      toastr.error(error.response.data.message || 'Opps, could not sign you up at this time');
     });
 };
