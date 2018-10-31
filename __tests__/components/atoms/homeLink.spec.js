@@ -8,7 +8,7 @@ describe('HomeLink', () => {
   it('should have the correct item', (done) => {
     const wrapper = shallow(<HomeLink />);
 
-    expect(wrapper.find('img').length).toEqual(1);
+    expect(wrapper.find('i').length).toEqual(1);
     done();
   });
 });

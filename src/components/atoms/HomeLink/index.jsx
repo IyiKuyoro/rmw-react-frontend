@@ -7,7 +7,7 @@ import style from './style.css';
 
 const HomeLink = () => (
   <Link to="/" className={style.home}>
-    <img className={style.logo} src={logo} alt="Ride My Way logo, home" />
+    <i className={`far fa-registered ${style.logo}`} />
   </Link>
 );
 
