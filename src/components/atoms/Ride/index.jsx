@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getRideDetails } from '../../../store/actions/dashboard';
 import Button from '../Button';
 import style from './style.css';
 
-const Ride = (props) => {
+export const Ride = (props) => {
   const {
-    from, to, time, seats,
+    id, from, to, time, seats, getRide,
   } = props;
   return (
     <div className={`${style.card} ${style.wrap_container}`}>
@@ -24,16 +26,27 @@ const Ride = (props) => {
           <p>{seats}</p>
         </div>
       </div>
-      <Button className={style.view}>View</Button>
+      <Button
+        className={style.view}
+        onClick={() => getRide(id, JSON.parse(localStorage.getItem('user')).token)}
+      >
+        View
+      </Button>
     </div>
   );
 };
 
 Ride.propTypes = {
+  id: PropTypes.number.isRequired,
   from: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
   seats: PropTypes.number.isRequired,
+  getRide: PropTypes.func.isRequired,
 };
 
-export default Ride;
+const mapDispatchToProps = dispatch => ({
+  getRide: (id, token) => dispatch(getRideDetails(id, token)),
+});
+
+export default connect(null, mapDispatchToProps)(Ride);

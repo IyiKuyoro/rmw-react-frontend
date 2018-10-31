@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import toastr from 'toastr';
 import PropTypes from 'prop-types';
 import Header from '../../components/compounds/Header';
 import NavBarComponent from '../../components/compounds/NavBar';
 import Ride from '../../components/atoms/Ride';
 import OfferRideComponent from '../../components/compounds/OfferRide';
 import Requests from '../../components/compounds/Request';
+import ViewRideModal from '../../components/compounds/ViewRideModal';
 import { saveUser } from '../../store/actions/auth';
 import style from './style.css';
 
@@ -21,19 +23,18 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
-    const { user, history, setUser } = this.props;
-
+    let { user } = this.props;
+    const { history, setUser } = this.props;
 
     if (localStorage.user) {
-      const exisitingUser = JSON.parse(localStorage.getItem('user'));
+      user = JSON.parse(localStorage.getItem('user'));
 
       if (user) {
-        setUser(exisitingUser);
+        setUser(user);
       }
     }
 
     if (user) {
-      console.log(user);
       return axios.get('https://iyikuyoro-ride-my-way.herokuapp.com/api/v1/rides',
         {
           headers: {
@@ -49,7 +50,7 @@ class Dashboard extends Component {
         .catch((err) => {
           localStorage.clear();
           history.push('/');
-          console.log(err);
+          toastr.error(err.response.data.message || 'Opps, somethings has gone wrong');
         });
     }
 
@@ -58,9 +59,10 @@ class Dashboard extends Component {
 
   render() {
     const { rides } = this.state;
-    const { currentPage } = this.props;
+    const { currentPage, showRideDetails } = this.props;
     return (
       <div>
+        {showRideDetails ? <ViewRideModal /> : null}
         <div className={style.header__wrapper}>
           <Header className={style.header} />
         </div>
@@ -75,6 +77,7 @@ class Dashboard extends Component {
                 {rides.map(ride => (
                   <Ride
                     key={ride.id}
+                    id={ride.id}
                     from={ride.origin}
                     to={ride.destination}
                     time={ride.time}
@@ -109,6 +112,7 @@ Dashboard.propTypes = {
   }).isRequired,
   currentPage: PropTypes.string,
   setUser: PropTypes.func.isRequired,
+  showRideDetails: PropTypes.bool.isRequired,
 };
 
 Dashboard.defaultProps = {
@@ -119,6 +123,7 @@ Dashboard.defaultProps = {
 const mapStateToProps = state => ({
   currentPage: state.dashboard.page,
   user: state.auth.user,
+  showRideDetails: state.dashboard.showRideDetails,
 });
 
 const mapDispatchToProps = dispatch => ({

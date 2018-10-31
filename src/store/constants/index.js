@@ -1,3 +1,5 @@
 export const TOGGLE_MODAL = 'TOGGLE_MODAL';
 export const SET_USER = 'SET_USER';
 export const CHANGE_PAGE = 'CHANGE_PAGE';
+export const CHANGE_SINGLE_RIDE = 'CHANGE_SINGLE_RIDE';
+export const CLOSE_SINGE_RIDE = 'CLOSE_SINGLE_RIDE';

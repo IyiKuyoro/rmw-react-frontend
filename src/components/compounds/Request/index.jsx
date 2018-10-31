@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Button from '../../../components/atoms/Button';
 import style from './style.css';
 
-const Requests = (props) => {
+export const Requests = (props) => {
   const { rides, user } = props;
   return (
     <div className={`${style.wrap_container} ${style.full_width}`}>
@@ -41,15 +41,7 @@ const Requests = (props) => {
 Requests.propTypes = {
   rides: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
   user: PropTypes.shape({
-    emailAddress: PropTypes.string.isRequired,
-    firstName: PropTypes.string.isRequired,
-    friends: PropTypes.string.isRequired,
     iD: PropTypes.string.isRequired,
-    lastName: PropTypes.string.isRequired,
-    mobileNumber: PropTypes.string.isRequired,
-    ridesOffered: PropTypes.string.isRequired,
-    ridesTaken: PropTypes.string.isRequired,
-    token: PropTypes.string.isRequired,
   }).isRequired,
 };
 
