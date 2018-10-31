@@ -48,7 +48,7 @@ describe('auth actions', () => {
 
     const store = mockStore({
       user: {},
-      modalOpe: false,
+      modalOpen: false,
     });
 
     store

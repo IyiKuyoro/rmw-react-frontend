@@ -1,0 +1,49 @@
+.screen {
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  background: rgb(128,128,128, 0.5);
+}
+
+.ride_details {
+  background: #3fccff;
+  padding: 5px 20px 10px 20px;
+  width: 25%;
+  min-width: 220px;
+  height: fit-content;
+  border-radius: 15px;
+}
+
+.close_icon {
+  top: 15px;
+}
+
+.driver_name {
+  text-align: center;
+  margin: 0 0 5px 0;
+  font-size: 20px;
+}
+
+.list {
+  margin: 0 auto;
+  padding: 0;
+  border-top: solid #006da0;
+}
+
+.list_item {
+  background: none;
+  margin: 0;
+  font-size: 17px;
+  text-align: center;
+  list-style-type: none;
+}
+
+.bold {
+  font-weight: bold;
+}
