@@ -12,7 +12,7 @@ import ViewRideModal from '../../components/compounds/ViewRideModal';
 import { saveUser } from '../../store/actions/auth';
 import style from './style.css';
 
-class Dashboard extends Component {
+export class Dashboard extends Component {
   constructor(props) {
     super(props);
 

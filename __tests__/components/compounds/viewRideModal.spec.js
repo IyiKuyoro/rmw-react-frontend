@@ -4,12 +4,15 @@ import { ViewRideModal } from '../../../src/components/compounds/ViewRideModal';
 
 const closeModal = () => {};
 const ride = {
+  driverId: '1',
+  id: 1,
   driverName: 'Jack John',
   origin: 'somewhere',
   destination: 'nowhere',
   time: 'time time',
   allowStops: true,
   description: 'none stop all the way',
+  avaliableSpace: 2,
 };
 
 describe('ViewRideModal', () => {

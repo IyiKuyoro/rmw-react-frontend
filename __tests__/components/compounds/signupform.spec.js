@@ -1,25 +1,21 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
+import { shallow } from 'enzyme';
 
-import SignUpForm from '../../../src/components/compounds/SignUpForm';
+import { SignUpForm } from '../../../src/components/compounds/SignUpForm';
 
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
 describe('SignUpForm', () => {
-  const store = mockStore({
-  });
   it('should render', () => {
-    const wrapper = mount(
-      <Provider store={store}>
-        <BrowserRouter>
-          <SignUpForm />
-        </BrowserRouter>
-      </Provider>,
-    );
+    const wrapper = shallow(<SignUpForm history={{ push: () => {} }} signupAuth={() => {}} />);
+
+    wrapper.childAt(0).find('.input').simulate('change', {
+      target: { value: 'hello' },
+    });
+    wrapper.childAt(1).find('.input').simulate('change', {
+      target: { value: 'hello' },
+    });
+    wrapper.childAt(3).find('.input').simulate('change', {
+      target: { value: 'hello' },
+    });
 
     expect(wrapper.exists()).toBe(true);
   });

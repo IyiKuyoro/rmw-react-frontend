@@ -8,7 +8,7 @@ import { signup } from '../../../store/actions/auth';
 import Button from '../../atoms/Button';
 import style from './style.css';
 
-class SignUpForm extends Component {
+export class SignUpForm extends Component {
   constructor(props) {
     super(props);
 

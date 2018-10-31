@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import toastr from 'toastr';
+import validator from 'validator';
+import axios from 'axios';
 import Button from '../../atoms/Button';
 import style from './style.css';
 
@@ -11,9 +13,58 @@ export class OfferRide extends Component {
       origin: '',
       destination: '',
       time: '',
-      dropoff: '',
-      space: '',
+      dropoff: false,
+      space: 0,
       description: '',
+    };
+
+    this.postOffer = () => {
+      const {
+        origin, destination, time, dropoff, space, description,
+      } = this.state;
+      axios.post('https://iyikuyoro-ride-my-way.herokuapp.com/api/v1/users/rides', {
+        origin,
+        destination,
+        time,
+        allowStops: dropoff,
+        avaliableSpace: space,
+        description,
+      }, {
+        headers: {
+          jwt: JSON.parse(localStorage.getItem('user')).token,
+        },
+      })
+        .then(() => {
+          toastr.success('Ride has been saved');
+        })
+        .catch((err) => {
+          toastr.error(err.response.data.message || 'Opps, something is wrong');
+        });
+    };
+
+    this.submit = () => {
+      const {
+        origin, destination, time, space, description,
+      } = this.state;
+
+      if (origin.trim() === '') {
+        return toastr.error('Invalid origin');
+      }
+      if (destination.trim() === '') {
+        return toastr.error('Invalid destination');
+      }
+      if (time.trim() === '') {
+        return toastr.error('Invalid time');
+      }
+      if (description.trim() === '') {
+        return toastr.error('Invalid description');
+      }
+      if (!validator.isNumeric(space.toString()) || space <= 0) {
+        console.log('here');
+        return toastr.error('Invalid space');
+      }
+
+      return this.postOffer();
     };
   }
 
@@ -61,23 +112,17 @@ export class OfferRide extends Component {
               className={style.input}
             />
           </label>
-          <label className={style.label} htmlFor="dropoff">
+          <label className={style.checkbox_label} htmlFor="dropoff">
             Drop-Off
-            <select
-              id="dropoff"
+            <input
+              type="checkbox"
+              id="space"
               value={dropoff}
               onChange={e => this.setState({
                 dropoff: e.target.value,
               })}
-              className={style.input}
-            >
-              <option>
-                True
-              </option>
-              <option>
-                False
-              </option>
-            </select>
+              className={style.checkbox}
+            />
           </label>
           <label className={style.label} htmlFor="space">
             Space
@@ -91,7 +136,7 @@ export class OfferRide extends Component {
               className={style.input}
             />
           </label>
-          <label className={style.label} htmlFor="description">
+          <label className={style.label_spec} htmlFor="description">
             Proposed Route
             <textarea
               id="description"
@@ -106,9 +151,7 @@ export class OfferRide extends Component {
           </label>
           <Button
             className={style.button}
-            onClick={() => {
-              toastr.warning('Coming Soon!');
-            }}
+            onClick={() => this.submit()}
           >
             Offer
           </Button>

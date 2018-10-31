@@ -20,7 +20,7 @@ const rides = [{
   requests: [1, 2, 3, 4],
 }];
 const user = {
-  iD: 1,
+  iD: '1',
 };
 
 describe('Requests', () => {

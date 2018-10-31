@@ -67,7 +67,7 @@ ViewRideModal.propTypes = {
     destination: PropTypes.string.isRequired,
     driverId: PropTypes.string.isRequired,
     driverName: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     origin: PropTypes.string.isRequired,
     time: PropTypes.string.isRequired,
   }).isRequired,

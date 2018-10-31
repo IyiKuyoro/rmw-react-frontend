@@ -14,9 +14,7 @@ describe('OfferRide', () => {
     wrapper.childAt(1).childAt(4).find('.input').simulate('change', {
       target: { value: 4 },
     });
-    wrapper.childAt(1).childAt(3).find('.input').simulate('change', {
-      target: { value: true },
-    });
+    wrapper.childAt(1).childAt(3).find('.checkbox').simulate('click');
     wrapper.childAt(1).childAt(2).find('.input').simulate('change', {
       target: { value: '03:48 AM' },
     });
