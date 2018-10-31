@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import toastr from 'toastr';
+import validator from 'validator';
 import { signup } from '../../../store/actions/auth';
 import Button from '../../atoms/Button';
 import style from './style.css';
@@ -158,19 +159,30 @@ class SignUpForm extends Component {
         <Button
           className={style.submit}
           onClick={() => {
-            if (confirmPassword === password) {
-              signupAuth({
-                firstname,
-                lastname,
-                sex,
-                dob,
-                mobile,
-                email,
-                password,
-              }, history);
-            } else {
-              toastr.error('Passwords must match');
+            if (confirmPassword !== password) {
+              return toastr.error('Passwords must match');
             }
+            if (!validator.isEmail(email)) {
+              return toastr.error('Email is invalid');
+            }
+            if (!validator.isNumeric(mobile)) {
+              return toastr.error('Invalid phone number');
+            }
+            if (firstname.trim() === '' || lastname.trim() === '') {
+              return toastr.error('Invalid name');
+            }
+            if (password.trim() === '') {
+              return toastr.error('Please provide a password');
+            }
+            return signupAuth({
+              firstname: firstname.trim(),
+              lastname: lastname.trim(),
+              sex,
+              dob,
+              mobile,
+              email,
+              password,
+            }, history);
           }}
         >
           Submit
