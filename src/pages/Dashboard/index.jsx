@@ -64,7 +64,7 @@ export class Dashboard extends Component {
       <div>
         {showRideDetails ? <ViewRideModal /> : null}
         <div className={style.header__wrapper}>
-          <Header className={style.header} />
+          <Header className={style.header} page="" />
         </div>
         <div className={style.navbar__wrapper}>
           <NavBarComponent />
