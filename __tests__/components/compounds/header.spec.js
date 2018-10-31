@@ -6,7 +6,7 @@ import Header from '../../../src/components/compounds/Header';
 
 describe('Header', () => {
   it('', () => {
-    const wrapper = shallow(<Header />);
+    const wrapper = shallow(<Header page="landing" />);
 
     expect(wrapper.exists()).toEqual(true);
   });

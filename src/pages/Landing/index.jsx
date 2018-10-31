@@ -20,7 +20,7 @@ const Landing = (props) => {
       <img className={style.landing} src={image} alt="background" />
       <div className={style.items}>
         <AuthModalComponent />
-        <Header />
+        <Header page="landing" />
         <div className={style.hero}>
           <h2>Harness the power in kindness</h2>
           <p>We will help you get from where you are to where you need to be.</p>
