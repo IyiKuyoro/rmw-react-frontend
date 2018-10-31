@@ -26,7 +26,7 @@ export const NavBar = (props) => {
         className={`${style.nav_button} ${currentPage === 'request' ? style.selected : ''}`}
         onClick={() => change('request')}
       >
-        Request
+        Requests
       </Button>
       <Button
         className={`${style.nav_button} ${currentPage === 'sign out' ? style.selected : ''}`}
