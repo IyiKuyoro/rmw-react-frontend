@@ -27,6 +27,7 @@
   position: relative;
   margin: 13px;
   left: 90%;
+  color: black;
 }
 
 .close_icon:focus {
@@ -57,10 +58,12 @@
   border-bottom: 2px solid rgb(0, 0, 42);
 }
 
-
-
 @media screen and (min-height: 470px) {
   .modal {
-    width: 100%;
+    width: 90%;
+  }
+
+  .close_icon {
+    left: 85%;
   }
 }

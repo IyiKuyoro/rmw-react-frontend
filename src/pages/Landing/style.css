@@ -1,12 +1,27 @@
+.wrapper {
+  height: 100vh;
+  background: rgba(54, 54, 54, 0.5);
+  color: white;
+}
+
 .landing {
-  background-image: url('../../static/images/landing.jpg');
+  width: 100%;
+  height: auto;
+  position: fixed;
+  z-index: -1;
+}
+
+.item {
+  position: relative;
+  height: 100%;
 }
 
 .hero {
   text-align: center;
-  width: fit-content;
-  margin: 15% auto 12% auto;
-  padding: 0 30px;
+  width: calc(100% - 20px);
+  min-height: 150px;
+  margin: 15% auto 5% auto;
+  padding: 40px 10px;
   font-family: 'Montserrat', sans-serif;
 }
 

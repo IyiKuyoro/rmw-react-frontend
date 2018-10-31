@@ -41,4 +41,4 @@ createServer((request, response) => {
   });
 }).listen(Port);
 
-console.log(`server is listening on port: ${Port}`);
+console.log(`server is running on port: ${Port}`);

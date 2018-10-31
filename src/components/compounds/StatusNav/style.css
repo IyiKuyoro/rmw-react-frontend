@@ -1,5 +1,12 @@
-.nav {
+.nav_black {
   padding: 12px 0;
+  color: black;
+  text-align: right;
+}
+
+.nav_white {
+  padding: 12px 0;
+  color: white;
   text-align: right;
 }
 

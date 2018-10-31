@@ -19,7 +19,7 @@ describe('StatusNav signed-out', () => {
   });
 
   it('should render RideMyWay', () => {
-    const wrapper = mount(<Provider store={store}><StatusNav /></Provider>);
+    const wrapper = mount(<Provider store={store}><StatusNav page="landing" /></Provider>);
 
     expect(wrapper.find('h1').text()).toEqual('Ride My Way');
     expect(wrapper.find('p').text()).toEqual('Simply tag along');

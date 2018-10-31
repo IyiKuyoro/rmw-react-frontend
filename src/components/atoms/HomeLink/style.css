@@ -1,8 +1,17 @@
 .logo {
   width: 70px;
   height: 70px;
+  font-size: 70px;
+  font-weight: lighter;
+  margin-top: 7px;
 }
 
-.home {
+.home_black {
+  color: black;
+  height: fit-content;
+}
+
+.home_white {
+  color: white;
   height: fit-content;
 }
